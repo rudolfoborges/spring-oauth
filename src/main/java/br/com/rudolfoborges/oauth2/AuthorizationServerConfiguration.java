@@ -43,14 +43,14 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 		// @formatter:off
 		clients
 			.inMemory()
-			.withClient("clientapp")
-			.authorizedGrantTypes("password", "authorization_code", "refresh_token", "implicit")
+			.withClient("acme")
+			.secret("acmesecret")
+			.authorizedGrantTypes("authorization_code", "refresh_token", "password")
 			.authorities("ADMIN")
-			.scopes("read", "write", "trust")
+			.scopes("read", "write", "openid")
 			.resourceIds(RESOURCE_ID)
-			.secret("123456")
 			.refreshTokenValiditySeconds(600)
-			.accessTokenValiditySeconds(60);
+			.accessTokenValiditySeconds(30);
 		// @formatter:on
 	}
 

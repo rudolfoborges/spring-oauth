@@ -1,0 +1,1 @@
+curl -X POST -k -vu acme:acmesecret http://localhost:8080/oauth/token -H "Accept: application/json" -d "username=rudolfoborges&password=1234&client_id=acme&client_secret=acmesecret&grant_type=password"
