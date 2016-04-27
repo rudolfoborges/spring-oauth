@@ -20,19 +20,14 @@ public class UserRepository {
 		User user2 = new User("fulano", "xpto");
 		user1.getRoles().add(new Role("MEMBER"));
 		
-		DB.add(user1);
-		DB.add(user2);
+		DB.addAll(Arrays.asList(user1, user2));
 	}
 	
 	public User find(String username){
 		User user = null;
-		
-		System.out.println(username);
-		
 		for (User u : DB) {
 			if(u.getUsername().equalsIgnoreCase(username)) user = u;
 		}
-		
 		return user; 
 	}
 		
